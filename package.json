@@ -1,0 +1,78 @@
+{
+    "name": "bedrock-world",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@auth0/auth0-spa-js": "^1.9.0",
+        "@mdi/js": "^5.1.45",
+        "@mdi/react": "^1.4.0",
+        "@stripe/react-stripe-js": "^1.1.2",
+        "@stripe/stripe-js": "^1.4.0",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "@types/jest": "^24.9.1",
+        "@types/node": "^12.12.37",
+        "@types/react": "^16.9.34",
+        "@types/react-dom": "^16.9.6",
+        "@types/styled-components": "^5.1.0",
+        "axios": "^0.19.2",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.1",
+        "react-stripe-checkout": "^2.6.3",
+        "react-stripe-elements": "^6.1.2",
+        "react-toastify": "^5.5.0",
+        "react-use": "^15.1.1",
+        "styled-components": "^5.1.0",
+        "typescript": "^3.7.5"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "deploy": "gh-pages -d build",
+        "postbuild": "react-snap",
+        "predeploy": "npm run build",
+        "storybook": "start-storybook -p 9009 -s public",
+        "build-storybook": "build-storybook -s public"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@storybook/addon-actions": "^5.3.18",
+        "@storybook/addon-links": "^5.3.18",
+        "@storybook/addons": "^5.3.18",
+        "@storybook/preset-create-react-app": "^2.1.2",
+        "@storybook/react": "^5.3.18",
+        "@storybook/theming": "^5.3.18",
+        "@types/react-router-dom": "^5.1.5",
+        "@types/react-stripe-elements": "^6.0.4",
+        "gh-pages": "^2.2.0",
+        "husky": "^4.2.5",
+        "node-sass": "^4.13.1",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "react-snap": "^1.23.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
+}

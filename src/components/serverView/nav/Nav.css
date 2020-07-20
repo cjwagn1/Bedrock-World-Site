@@ -1,0 +1,44 @@
+.ItemBig {
+    grid-column: span 2;
+    background-color: red;
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.ItemHorizontal {
+    grid-column: span 2;
+    background-color: green;
+    height: 100%;
+    display: flex;
+    color: black;
+    justify-content: center;
+    text-decoration: underline;
+    align-items: center;
+
+    width: 100%;
+}
+.ItemVertical {
+    grid-row: span 2;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    width: 100%;
+}
+.ItemNormal {
+    background-color: cyan;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    align-items: center;
+    color: black;
+    width: 100%;
+}
