@@ -4,14 +4,18 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Auth0Provider, onRedirectCallback } from "./utils/react-auth0-wrapper";
-import { config } from "./config";
+
 import { StripeProvider } from "react-stripe-elements";
+
+const domain: string = `${process.env.REACT_APP_AUTH0_DOMAIN}`;
+const client: string = `${process.env.REACT_APP_AUTH0_CLIENT_ID}`;
+
 ReactDOM.render(
     <React.StrictMode>
         <StripeProvider apiKey="pk_test_12345">
             <Auth0Provider
-                domain={"dev-5ji4z47r.auth0.com"}
-                client_id={"6aG85hAkO8v8j3wGEnUbuZgZWPtSgEY4"}
+                domain={domain}
+                client_id={client}
                 redirect_uri={window.location.origin}
                 onRedirectCallback={onRedirectCallback}
             >

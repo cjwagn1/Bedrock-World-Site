@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { AnyStyledComponent } from "styled-components";
+
 import { Link, useLocation } from "react-router-dom";
 import "./account.css";
 import { IAccountTab } from "./AccountHeader";

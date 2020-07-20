@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { AnyStyledComponent } from "styled-components";
 import Button from "../common/Button";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "../../utils/react-auth0-wrapper";
 import Profile from "../profile/Profile";
 const Navguide: AnyStyledComponent = styled.nav`
@@ -90,7 +90,7 @@ const Right: AnyStyledComponent = styled.div`
 `;
 
 export default () => {
-    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
 
     return (
         <Navguide>

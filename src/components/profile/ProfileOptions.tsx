@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { useAuth0 } from "../../utils/react-auth0-wrapper";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Dropdown = styled.div`
     position: absolute;

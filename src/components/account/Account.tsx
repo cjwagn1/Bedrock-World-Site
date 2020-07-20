@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
-import styled, { AnyStyledComponent } from "styled-components";
+import { Route, Switch } from "react-router-dom";
+
 import AccountHeader from "./AccountHeader";
 import Billing from "../billing/Billing";
 
