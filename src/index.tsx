@@ -1,27 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
+import history from "./utils/history";
 import * as serviceWorker from "./serviceWorker";
-import { Auth0Provider, onRedirectCallback } from "./utils/react-auth0-wrapper";
+// import { Auth0Provider, onRedirectCallback } from "./utils/react-auth0-wrapper";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-import { StripeProvider } from "react-stripe-elements";
+// import { StripeProvider } from "react-stripe-elements";
 
 const domain: string = `${process.env.REACT_APP_AUTH0_DOMAIN}`;
 const client: string = `${process.env.REACT_APP_AUTH0_CLIENT_ID}`;
+const audience: string = "https://ads-api";
 
 ReactDOM.render(
     <React.StrictMode>
-        <StripeProvider apiKey="pk_test_12345">
+        <Router history={history}>
             <Auth0Provider
                 domain={domain}
-                client_id={client}
+                clientId={client}
                 redirect_uri={window.location.origin}
-                onRedirectCallback={onRedirectCallback}
+                // onRedirectCallback={onRedirectCallback}
+                audience={audience}
             >
                 <App />
             </Auth0Provider>
-        </StripeProvider>
+        </Router>
     </React.StrictMode>,
     document.getElementById("root")
 );

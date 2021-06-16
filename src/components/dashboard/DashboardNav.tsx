@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import styled, { AnyStyledComponent } from "styled-components";
-import Profile from "../profile/Profile";
 import Button from "../common/Button";
+import Profile from "../profile/Profile";
+
 const Overview: AnyStyledComponent = styled.div`
     display: flex;
     height: 70px;
@@ -26,16 +28,74 @@ const CreateServerButton: AnyStyledComponent = styled.div`
 const Name: AnyStyledComponent = styled.div`
     display: inline-block;
 `;
+const domain: string = `${process.env.REACT_APP_AUTH0_DOMAIN}`;
 
 export default () => {
+    const [message, setMessage] = useState("");
+    const { getAccessTokenSilently } = useAuth0();
+
+    // const callApi = async () => {
+    //     try {
+    //         const response = await fetch(
+    //             `http://localhost:9002/server/delete/3`,
+    //             {
+    //                 method: "post",
+    //             }
+    //         );
+
+    //         const responseData = await response.json();
+
+    //         setMessage(responseData);
+    //     } catch (error) {
+    //         setMessage(error.message);
+    //     }
+    // };
+
+    const callSecureApi = async () => {
+        // console.log("hello");
+        try {
+            console.log(
+                "%c hello",
+                "color:white;font-size:2em;background:#ff00ff;font-family:'Comic Sans MS'"
+            );
+            const accessToken = await getAccessTokenSilently({
+                audience: `https://${domain}/api/v2/`,
+                scope: "read:current_user",
+            });
+            console.log(accessToken);
+            console.log("noobs");
+            const response = await fetch(
+                `http://localhost:9002/server/delete/3`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                    },
+                    method: "post",
+                }
+            );
+
+            const responseData = await response.json();
+
+            setMessage(responseData);
+        } catch (error) {
+            setMessage(error.message);
+            // console.log("hello");
+        }
+    };
+
     return (
         <Overview>
             <Spacer></Spacer>
             <Content>
                 <CreateServerButton>
-                    <Button style={{ float: "right" }}>Create server</Button>
+                    <Button onClick={callSecureApi} style={{ float: "right" }}>
+                        Create server
+                    </Button>
+                    {JSON.stringify(message, null, 2)}
                 </CreateServerButton>
-                <Name>Carter Wagner</Name>
+                <Name>
+                    <Profile />
+                </Name>
             </Content>
         </Overview>
     );

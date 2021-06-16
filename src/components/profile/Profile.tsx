@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useAuth0 } from "../../utils/react-auth0-wrapper";
+import { useAuth0 } from "@auth0/auth0-react";
 import Options from "./ProfileOptions";
 
 const DropdownWrapper = styled.div`
@@ -56,7 +56,7 @@ const TriangleRight = styled.div`
 `;
 
 export default () => {
-    const { loading, user } = useAuth0();
+    const { isLoading, user } = useAuth0();
 
     const [down, setDown] = React.useState(false);
 
@@ -71,10 +71,10 @@ export default () => {
                     }
                 }}
             >
-                {!loading && (
+                {!isLoading && (
                     <Picture src={user.picture} alt="Profile"></Picture>
                 )}
-                {!loading && <Name>{user.name}</Name>}
+                {!isLoading && <Name>{user.name}</Name>}
                 {down ? <TriangleRight /> : <TriangleDown />}
             </ProfileDisplay>
             {down && <Options />}

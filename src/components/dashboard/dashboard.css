@@ -1,0 +1,75 @@
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    transition: all 0.2s ease-in-out;
+    left: 20px;
+    top: 20px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+
+/* Color/shape of close button cross */
+
+/* General sidebar styles */
+.bm-menu {
+    height: 100vh;
+}
+
+/* Morph shape necessary with bubble or elastic */
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+.bm-cross-button {
+    height: 0px;
+    width: 0px;
+    display: none;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    background: #bdc3c7;
+}
+.bm-menu-wrap {
+    position: fixed;
+    height: 100vh;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: #373a47;
+    height: 100%;
+    width: 100%;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+}
+
+/* Individual item */
+.bm-item {
+    display: inline-block;
+}
+
+/* Styling of overlay */

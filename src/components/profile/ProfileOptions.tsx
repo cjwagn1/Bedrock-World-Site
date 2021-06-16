@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-import { useAuth0 } from "../../utils/react-auth0-wrapper";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 
 const Dropdown = styled.div`
@@ -50,6 +49,9 @@ export default () => {
         <Dropdown>
             <Link style={{ textDecoration: "none" }} to="/account">
                 <Profile>Account</Profile>
+            </Link>
+            <Link style={{ textDecoration: "none" }} to="/dashboard">
+                <Profile>Dashboard</Profile>
             </Link>
 
             <LogoutBtn onClick={logoutClick}>Log Out</LogoutBtn>

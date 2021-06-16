@@ -32,7 +32,7 @@ const tabs: any = [
         id: "1",
         name: "Billing",
 
-        link: "/account/billing",
+        link: "/dashboard/account/billing",
     },
     {
         id: "2",

@@ -1,11 +1,13 @@
 import React from "react";
 import styled, { AnyStyledComponent } from "styled-components";
-const Constraint: AnyStyledComponent = styled.div`
-    display: flex;
-    height: 100%;
-    max-width: 1200px;
-    margin: auto;
-`;
+import { NavButton } from "./DashboardNavButton";
+
+// const Constraint: AnyStyledComponent = styled.div`
+//     display: flex;
+//     height: 100%;
+//     max-width: 1200px;
+//     margin: auto;
+// `;
 const HomeLinkStyle: AnyStyledComponent = styled.a`
     text-decoration: none;
     display: flex;
@@ -19,6 +21,16 @@ const HomeLinkStyle: AnyStyledComponent = styled.a`
     user-select: none;
     cursor: pointer;
 `;
+const Side: AnyStyledComponent = styled.ul`
+    padding-left: 0;
+    padding-top: 70px;
+`;
+// const Img = styled.img`
+//     height: 40px;
+//     width: 40px;
+//     margin-right: 10px;
+//     user-select: none;
+// `;
 const Text: AnyStyledComponent = styled.div`
     font-size: 18px;
     font-family: "Poppins", sans-serif;
@@ -36,6 +48,28 @@ export default () => {
             <HomeLinkStyle>
                 <Text>Bedrock World</Text>
             </HomeLinkStyle>
+            <Side>
+                <NavButton
+                    image="https://img.icons8.com/material-outlined/24/000000/data-configuration.png"
+                    link="/dashboard/configure"
+                    text="Configure"
+                />
+                <NavButton
+                    image="https://img.icons8.com/fluent-systems-filled/24/000000/edit-property.png"
+                    link="/dashboard/servers"
+                    text="Servers"
+                />
+                <NavButton
+                    image="https://img.icons8.com/material-outlined/24/000000/data-configuration.png"
+                    link="/dashboard/account"
+                    text="Account"
+                />
+                <NavButton
+                    image="https://img.icons8.com/material-outlined/24/000000/data-configuration.png"
+                    link="/dashboard/meow"
+                    text="Permissions"
+                />
+            </Side>
         </div>
     );
 };

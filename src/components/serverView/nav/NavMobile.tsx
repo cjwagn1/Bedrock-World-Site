@@ -24,19 +24,19 @@ const tabsMobile: any = [
         id: "3",
         name: "Configure",
         style: "ItemBig",
-        link: "/configure",
+        link: "/dashboard/configure",
     },
     {
         id: "1",
         name: "Players",
         style: "ItemNormal",
-        link: "/players",
+        link: "/dashboard/players",
     },
     {
         id: "2",
         name: "Chat",
         style: "ItemNormal",
-        link: "/chat",
+        link: "/dashboard/chat",
     },
 ];
 

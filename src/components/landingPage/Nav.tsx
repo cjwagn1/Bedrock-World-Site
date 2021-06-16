@@ -2,7 +2,7 @@ import React from "react";
 import styled, { AnyStyledComponent } from "styled-components";
 import Button from "../common/Button";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "../../utils/react-auth0-wrapper";
+import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "../profile/Profile";
 const Navguide: AnyStyledComponent = styled.nav`
     background-color: #21212199;
